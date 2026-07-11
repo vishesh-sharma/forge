@@ -1,34 +1,33 @@
 # TPL-001 — Engineering Task Template
 
-| Field        | Value                     |
-| ------------ | ------------------------- |
-| Document ID  | TPL-001                   |
-| Title        | Engineering Task Template |
-| Category     | Specification Template    |
-| Version      | 1.0                       |
-| Status       | Approved                  |
-| Owner        | ForgeLabs                 |
-| Last Updated | 2026-07-11                |
+| Field         | Value                     |
+| ------------- | ------------------------- |
+| Template ID   | TPL-001                   |
+| Template Name | Engineering Task Template |
+| Version       | 1.1                       |
+| Status        | Active                    |
+| Owner         | ForgeLabs Engineering     |
+| Last Updated  | 2026-07-12                |
 
 ---
 
 # Purpose
 
-This template defines the standard format for all engineering tasks at ForgeLabs.
+Describe a single engineering task in a deterministic, implementation-independent manner.
 
-Every implementation task should follow this structure to ensure consistent planning, implementation, review, and traceability.
-
-The completed task specification serves as the contract between product, architecture, engineering, and AI-assisted implementation.
+A completed task specification should provide sufficient information for an engineer—human or AI—to implement the task without making undocumented assumptions.
 
 ---
 
-# Document Information
+# Metadata
 
 | Field        | Value                                      |
 | ------------ | ------------------------------------------ |
 | Task ID      | TASK-XXX                                   |
 | Title        |                                            |
-| Priority     | Critical / High / Medium / Low             |
+| Category     |                                            |
+| Epic         |                                            |
+| Priority     |                                            |
 | Status       | Draft / Approved / In Progress / Completed |
 | Owner        |                                            |
 | Created      |                                            |
@@ -36,95 +35,155 @@ The completed task specification serves as the contract between product, archite
 
 ---
 
-# Objective
+# Background
 
-Describe the single objective of this task.
+Describe the context that led to this task.
 
-The objective should clearly state **what** will be delivered, not how it will be implemented.
+Explain why the task exists and how it relates to previous work.
 
 ---
 
-# Background
+# Objective
 
-Explain why this task exists.
+State the desired outcome of the task.
 
-Include any relevant business, engineering, or architectural context that helps future engineers understand the motivation behind the work.
+The objective should describe **what** is to be achieved rather than **how** it should be implemented.
+
+---
+
+# Behavioral Contract
+
+Describe the externally observable behavior of the completed task.
+
+This section defines the expected behavior from the perspective of the user or consuming system.
+
+Where appropriate, specify behavior using a deterministic table.
+
+Example:
+
+| Invocation | Expected Behavior | Exit Code |
+| ---------- | ----------------- | --------: |
+| `example`  | Example output    |         0 |
+
+The Behavioral Contract should eliminate ambiguity by defining expected inputs, outputs, and observable results.
 
 ---
 
 # Scope
 
-Clearly define what is included in this task.
+Describe everything included within the task.
 
-Only include work that is expected to be completed as part of this implementation.
+The scope should be specific, measurable, and achievable within a single engineering task.
 
 ---
 
 # Out of Scope
 
-Explicitly describe work that is intentionally excluded.
+Explicitly list capabilities that are intentionally excluded.
 
-This section prevents scope creep and reduces ambiguity.
+Documenting exclusions reduces implementation ambiguity and prevents unnecessary scope expansion.
 
 ---
 
 # Constraints
 
-List constraints that must be respected.
+List engineering, architectural, business, or technical constraints that must be respected during implementation.
 
 Examples include:
 
-* Architectural decisions
-* Existing standards
-* Technology constraints
+* Existing architecture
+* Technology choices
+* Coding standards
 * Performance requirements
 * Security requirements
-* Compatibility requirements
+* Repository standards
+
+---
+
+# Technical Decisions
+
+Record important implementation decisions that intentionally influence the solution.
+
+This section documents **why** the implementation should follow a particular approach without prescribing unnecessary detail.
+
+Example:
+
+* Routing remains in `Program.cs`.
+* Dependency Injection is intentionally deferred.
+* External packages are not permitted for this milestone.
 
 ---
 
 # Acceptance Criteria
 
-Describe observable outcomes that determine whether the task has been successfully completed.
+Define the measurable conditions required for task completion.
 
-Acceptance criteria should be specific, measurable, and independently verifiable.
+Each criterion should be objectively verifiable.
+
+Acceptance criteria describe **what must be true** when the implementation is complete.
+
+---
+
+# Verification
+
+Describe how the implementation will be verified.
+
+Include:
+
+* Build commands
+* Test commands
+* Manual verification steps
+* Expected results
+
+Verification procedures should be executable without additional explanation.
+
+---
+
+# Testing Strategy
+
+Describe the testing expectations for this task.
+
+Examples:
+
+* Existing automated tests updated
+* New automated tests required
+* Manual verification only
+* Automated testing intentionally deferred with rationale
 
 ---
 
 # Definition of Done
 
-The task is complete only when all applicable conditions are satisfied.
+The task is complete when:
 
-Typical items include:
-
-* Acceptance criteria satisfied
-* Solution builds successfully
-* Tests pass (where applicable)
-* Documentation updated
-* Code reviewed
-* No unresolved critical issues
+* All Acceptance Criteria are satisfied.
+* Verification succeeds.
+* Build completes without warnings or errors.
+* Documentation has been updated where required.
+* Code review has been completed.
+* No unresolved critical issues remain.
 
 ---
 
-# References
+# Risks
 
-List all documents required to understand this task.
+Document significant technical, architectural, or delivery risks associated with the task.
 
-Examples:
+Where appropriate, describe mitigation strategies.
 
-* KN-001 – Engineering Constitution
-* STD-001 – Engineering Standards
-* PRD-001
-* ADR-001
-* RFC-001
+---
 
-Reference documents rather than duplicating their content.
+# Assumptions
+
+List assumptions made while preparing the specification.
+
+These assumptions should be reviewed if implementation requirements change.
 
 ---
 
 # Deliverables
 
-List the expected outputs of this task.
+List the expected outputs of the task.
 
 Examples:
 
@@ -132,66 +191,70 @@ Examples:
 * Documentation
 * Tests
 * Configuration
-* Scripts
-* Architecture updates
+* Templates
 
 ---
 
-# Risks and Assumptions
+# References
 
-Document known assumptions, dependencies, and implementation risks.
+List all documents relevant to the implementation.
 
-This helps reviewers understand potential trade-offs before implementation begins.
+Examples:
 
----
-
-# Engineering Value Assessment
-
-| Metric               | Rating |
-| -------------------- | ------ |
-| Customer Value       |        |
-| Engineering Leverage |        |
-| Business Risk        |        |
-| Technical Complexity |        |
-
-This assessment helps prioritize work based on long-term value rather than implementation effort alone.
-
----
-
-# Implementation Review
-
-To be completed after implementation.
-
-Capture:
-
-* Significant design decisions
-* Challenges encountered
-* Deviations from the original plan
-* Future improvement opportunities
-
----
-
-# Lessons Learned
-
-Summarize knowledge gained while completing the task.
-
-Lessons learned should improve future engineering work and may result in updates to engineering standards or reusable assets.
+* Knowledge documents
+* Standards
+* PRDs
+* Epics
+* ADRs
+* RFCs
+* Previous tasks
 
 ---
 
 # Suggested Commit Message
 
-Provide a concise commit message describing the completed work.
+Provide a conventional commit message appropriate for the completed task.
+
+Example:
+
+```text
+feat: implement feature name
+```
+
+---
+
+# Implementation Review
+
+*To be completed after implementation.*
+
+Summarize:
+
+* Significant implementation decisions
+* Deviations from the original specification
+* Technical observations
+* Follow-up recommendations
+
+---
+
+# Lessons Learned
+
+*To be completed after implementation.*
+
+Capture engineering knowledge discovered during implementation that may improve future work, templates, or standards.
+
+Only durable lessons should be promoted into the ForgeLabs Engineering System.
 
 ---
 
 # Completion Checklist
 
 * [ ] Objective achieved
+* [ ] Behavioral Contract implemented
 * [ ] Scope completed
-* [ ] Acceptance criteria satisfied
+* [ ] Acceptance Criteria satisfied
+* [ ] Verification completed
+* [ ] Testing completed or intentionally deferred
 * [ ] Definition of Done satisfied
 * [ ] Documentation updated
-* [ ] Implementation reviewed
-* [ ] Lessons learned recorded
+* [ ] Code reviewed
 * [ ] Ready for merge
