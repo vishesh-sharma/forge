@@ -22,8 +22,7 @@ switch (command)
         exitCode = 0;
         break;
     case "doctor":
-        Console.WriteLine("Doctor is not yet implemented.");
-        exitCode = 0;
+        exitCode = DoctorCommand.Execute();
         break;
     default:
         Console.WriteLine($"Unknown command: {command}");
