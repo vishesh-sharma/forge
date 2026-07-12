@@ -1,4 +1,4 @@
-﻿string? command = args.Length > 0 ? args[0] : null;
+string? command = args.Length > 0 ? args[0] : null;
 int exitCode;
 
 switch (command)
@@ -13,9 +13,9 @@ switch (command)
         Console.WriteLine("Run 'forge --help' to see available commands.");
         exitCode = 0;
         break;
+    case "help":
     case "--help":
-        Console.WriteLine("Help is not yet implemented.");
-        exitCode = 0;
+        exitCode = HelpCommand.Execute();
         break;
     case "--version":
         Console.WriteLine("Version information is not yet implemented.");
