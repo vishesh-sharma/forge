@@ -7,7 +7,7 @@
 | Category     | Feature                   |
 | Epic         | EPIC-001 — CLI Foundation |
 | Priority     | High                      |
-| Status       | Draft                     |
+| Status       | Completed                     |
 | Owner        | ForgeLabs Engineering     |
 | Created      | 2026-07-12                |
 | Last Updated | 2026-07-12                |
@@ -303,13 +303,42 @@ feat: implement forge doctor command
 
 # Implementation Review
 
-*To be completed after implementation.*
+Successfully completed TASK-003.
+
+The implementation:
+
+remained within the approved scope,
+modified only the expected source file,
+avoided unnecessary abstractions,
+satisfied the documented acceptance criteria.
 
 ---
 
 # Lessons Learned
 
-*To be completed after implementation.*
+1. Split work by user capability, not implementation detail.
+
+This is a strong candidate for becoming a future engineering principle if it continues to hold over the next few epics.
+
+Not yet.
+
+Let's validate it a few more times.
+
+2. Architecture should follow capability.
+
+We didn't introduce DoctorCommand because the roadmap said so.
+
+We introduced it because the implementation earned it.
+
+That validates ADR-001.
+
+3. Product value should be visible after every sprint.
+
+Every completed sprint should answer:
+
+What can a user do today that they couldn't do yesterday?
+
+That's a metric I want us to keep using.
 
 ---
 
