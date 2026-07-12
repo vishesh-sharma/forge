@@ -18,8 +18,7 @@ switch (command)
         exitCode = HelpCommand.Execute();
         break;
     case "--version":
-        Console.WriteLine("Version information is not yet implemented.");
-        exitCode = 0;
+        exitCode = VersionCommand.Execute();
         break;
     case "doctor":
         exitCode = DoctorCommand.Execute();
