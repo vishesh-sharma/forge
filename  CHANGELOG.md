@@ -5,6 +5,13 @@ All notable changes to Forge will be documented in this file.
 The format is inspired by Keep a Changelog and the project follows Semantic Versioning.
 
 ---
+## v0.5.0 - Forge Version Information
+
+### Added
+
+- Introduced the `forge --version` command.
+- Added dedicated `VersionCommand`.
+- Added deterministic product version output.
 
 ## [v0.4.0] - 2026-07-12
 
